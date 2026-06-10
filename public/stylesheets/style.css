@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #061930 0%, #001d3d 100%);
+    color: #eee;
+    /* border: #ff6347 2px solid; */
+}
+
+.heading{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2.5em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    /* border: #47ff97 2px solid; */
+}
+.title{
+    color: #ff6347;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(3, 176, 244, 0.5);
+}
+
+.notebook-heading{
+    margin: 10px 40px;
+    padding: 10px;
+}
+
+.notebookName{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #faf20f;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    background-color: #9e9c9c;
+    font-size: 1.2rem;
+  
+}
+.noteContent{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #9e9c9c;
+    color: #000000;
+    font-size: 1em;
+    resize: none;  
+    font-size: 1.2rem;
+}
+.notebookName::placeholder,.noteContent::placeholder{
+    color: white;
+}
+.addNote-flex{
+    display: flex;
+    justify-content: center;
+}
+.addNote{
+    background-color: #47ff97;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.container-box{
+    width: 220px; 
+    height: 280px;
+    display: flex;
+    flex-direction: column; 
+    border: #fff 2px solid;
+    border-radius: 12px;
+    padding :12px;
+    background: #232526;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    margin-bottom: 10px; 
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.notes-container{
+    flex: 1 1 auto;         /* changed for flexible height */
+    width: 100%;            /* changed to fill container */
+    min-width: 0;           /* added for flexbox overflow fix */
+    background: #b4bad0;    /* changed background */
+    border-radius: 8px;     /* changed border radius */
+    padding: 10px;          /* changed padding */
+    margin-bottom: 10px;    /* added margin for spacing */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;       /* changed from auto to hidden */
+    border: none;           /* removed yellow border */
+    box-sizing: border-box;
+}
+
+.notes-container h3 {
+    color: #fff;            /* changed heading color */
+    font-size: 1.1em;       /* changed font size */
+    margin: 0 0 6px 0;      /* changed margin */
+    font-weight: bold;
+    word-break: break-all;  /* added for long file names */
+    /* --- changes above --- */
+}
+
+.notes-container p {
+    color: #e0e0e0;         /* changed text color */
+    font-size: 1em;
+    margin: 0;
+    word-break: break-word;
+    overflow: auto;
+    max-height: 110px;      /* added max-height for scroll */
+    /* --- changes above --- */
+}
+.totalnotes{
+    margin: 10px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: auto;
+    gap : 40px;
+}
+.note-actions{
+    display: flex;
+    justify-content: center;
+    gap: 6px;               /* added gap between buttons */
+    margin-top: 0;          /* removed extra margin */
+    flex-direction: row;
+    /* --- changes above --- */
+    /* align-items: center; */
+}
+
+.edit-note,
+.delete-note,
+.read-more{
+    display: flex;                /* Make button a flex container */
+    flex-direction: column;       /* Stack icon and text vertically */
+    align-items: center;          /* Center horizontally */
+    justify-content: center;      /* Center vertically */
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    padding: 8px 14px;            /* Adjust padding as needed */
+    font-size: 1em;
+    background: #fff;
+    color: #232526;
+    transition: background 0.2s ease, color 0.2s ease;
+    min-width: 60px;              /* Optional: consistent width */
+    min-height: 60px;  
+    text-decoration: none;           /* Optional: consistent height */
+}
+   
+
+
+.edit-note:hover { background: #47ff97; color: #232526; }    /* added hover */
+.delete-note:hover { background: #ff6347; color: #fff; }     /* added hover */
+.read-more:hover { background: #66a6ff; color: #fff; } 

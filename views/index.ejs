@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY Notebook</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://kit.fontawesome.com/4f06fe4861.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="heading">
+        <div class="Image">
+            <img src="/images/notebook.png" alt="my note" width="90">
+        </div>
+        <div class="title">
+            <h1> Notes Book</h1>
+        </div>
+
+    </div>
+
+    <div class="notebook-heading">
+        <form action="/create" method="post">
+            <input type="text" name="notebookName" class="notebookName" placeholder="Enter Notebook Name">
+            <textarea name="noteContent" class="noteContent" placeholder="Enter your notes here"></textarea>
+            <button class="addNote "></i> Add Note</button>
+        </form>
+        <!-- <div class="addNote-flex" >
+            <button class="addNote "></i> Add Note</button>
+        </div> -->
+
+    </div>
+    <h2 style="margin: 10px 50px;" 10px 50px;> your notes will be displayed here👇</h2>
+    <div class="totalnotes flex">
+
+        <% if (files.length===0) { %>
+            <div class="no-notes">
+                <h2>No notes available</h2>
+            </div>
+            <% } else { %>
+                <% files.forEach(function(val){ %>
+
+                    <div class="container-box">
+                        <div class="notes-container">
+                            <h3 style="color:rgb(117, 68, 0);">
+                                <%= val.name %>
+                            </h3>
+                            <p style="overflow: auto; color: black;padding-left: 5px;">
+                                <%= val.content %>
+                            </p>
+                        </div>
+                        <div class="note-actions">
+                            <a href="/edit-note/<%= val.name %>" class="edit-note"><i
+                                    class="fa-solid fa-pen-to-square"></i> Edit</a>
+                            <a href="/delete-note/<%= val.name %>" class="delete-note"><i class="fa-solid fa-trash"></i>
+                                Delete</a>
+                            <a href="/read-more/<%= encodeURIComponent(val.name) %>" class="read-more">
+                                <i class="fa-solid fa-arrow-right"></i> Read More
+                            </a>
+                        </div>
+                    </div>
+                    <% }) %>
+                        <%}%>
+    </div>
+
+</body>
+
+</html>
