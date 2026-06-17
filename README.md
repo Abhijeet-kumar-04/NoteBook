@@ -1,4 +1,4 @@
-# 📝 My NoteBook - Simple Notes Web Application
+# 📝 NoteBook - Simple Notes Web Application
 
 A lightweight, full-stack web application for creating, reading, editing, and deleting notes. Built with Node.js, Express, and EJS, NoteBook provides a clean and intuitive interface for managing your digital notes.
 
